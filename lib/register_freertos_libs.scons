@@ -1,0 +1,13 @@
+Import("env")
+
+for libname in [
+    "cmsis",
+    "freertos",
+]:
+    env.RegisterComponent(f"fwlib_{libname}", env.FindComponentSconscript(libname))
+
+env.AppendUnique(
+    CPPPATH=[
+        Dir(".").srcnode(),
+    ],
+)

@@ -1,0 +1,7 @@
+Import("env")
+
+SConscript(
+    "#/lib/register_freertos_libs.scons",
+    exports={"env": env},
+    duplicate=0,
+)
